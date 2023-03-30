@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font11 {
+    
+    font-size: 1.6vh;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight:400
+
+}
+
+.font1 {
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.font4 {
+    font-size: 1.5vh;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 900;
+}
+
+.font5 {
+    font-size: 1.2vh;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.radius {
+    border-radius: 5vh;
+}
+.bg{
+    background-image: url(/build/images/bg-simplify-section-mobile.svg);
+    background-position: contain;
+    background-size: cover;
+    
+}
