@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -31,6 +31,7 @@
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
 */
 
 html {
@@ -47,6 +48,8 @@ html {
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
 }
 
 /*
@@ -525,8 +528,8 @@ video {
   top: -2.5rem;
 }
 
-.left-24 {
-  left: 6rem;
+.left-32 {
+  left: 8rem;
 }
 
 .left-64 {
@@ -535,10 +538,6 @@ video {
 
 .left-72 {
   left: 18rem;
-}
-
-.left-32 {
-  left: 8rem;
 }
 
 .m-6 {
@@ -553,10 +552,6 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.-mt-12 {
-  margin-top: -3rem;
 }
 
 .mb-10 {
@@ -585,10 +580,6 @@ video {
 
 .mt-12 {
   margin-top: 3rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
 }
 
 .mt-4 {
@@ -633,10 +624,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -705,10 +692,6 @@ video {
   border-radius: 0.75rem;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .border-2 {
   border-width: 2px;
 }
@@ -716,11 +699,6 @@ video {
 .border-red-500 {
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
-}
-
-.border-red-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(185 28 28 / var(--tw-border-opacity));
 }
 
 .bg-gray-200 {
@@ -763,19 +741,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-red-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
-}
-
-.bg-cover {
-  background-size: cover;
-}
-
-.bg-contain {
-  background-size: contain;
-}
-
 .p-1 {
   padding: 0.25rem;
 }
@@ -798,14 +763,6 @@ video {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-20 {
-  padding: 5rem;
-}
-
-.p-28 {
-  padding: 7rem;
 }
 
 .px-4 {
@@ -894,35 +851,74 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.font11 {
-  font-size: 1.6vh;
-  font-family: 'Be Vietnam Pro', sans-serif;
-  font-weight:400
+body {
+  background-image: url('../images/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+  background-size: 800px ;
+  background-position: 80% -20%;
 }
 
-.font1 {
-  font-family: 'Be Vietnam Pro', sans-serif;
+#cta {
+  background-image: url(../images/bg-simplify-section-desktop.svg);
+  background-repeat: no-repeat;
 }
 
-.font4 {
-  font-size: 1.5vh;
-  font-family: 'Be Vietnam Pro', sans-serif;
-  font-weight: 900;
+@media(max-width: 576px) {
+  body {
+    background-position:  50px -50px;
+    background-size: 500px;
+  }
+
+  #cta {
+    background-image:url(../images/bg-simplify-section-mobile.svg);
+  }
 }
 
-.font5 {
-  font-size: 1.2vh;
-  font-family: 'Be Vietnam Pro', sans-serif;
+/* Hamburger menu */
+
+.hamburger{
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
 }
 
-.radius {
-  border-radius: 5vh;
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  transition: all 0.25s;
 }
 
-.bg{
-  background-image: url(/build/images/bg-simplify-section-mobile.svg);
-  background-position: contain;
-  background-size: cover;
+.hamburger-middle{
+  transform: translateY(7px);
+}
+
+.hamburger-bottom{
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top{
+  transform: rotate(45deg) translateY(6px)  translate(6px);
+}
+
+.open .hamburger-middle{
+  display: none;
+}
+
+.open .hamburger-bottom{
+  transform: rotate(-45deg) translateY(6px)  translate(-6px);
 }
 
 .hover\:bg-orange-400:hover {
@@ -955,7 +951,7 @@ video {
   outline-offset: 2px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 480px) {
   .sm\:left-64 {
     left: 16rem;
   }
