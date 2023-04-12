@@ -4,12 +4,14 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "tailwindcss": "npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch", "prettier": "npx prettier --write **/*.html"
+    "tailwindcss": "npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch",
+    "prettier": "npx prettier --write **/*.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "prettier-plugin-tailwindcss": "^0.2.5"
+    "prettier-plugin-tailwindcss": "^0.2.5",
+    "tailwindcss": "^3.3.1"
   }
 }
